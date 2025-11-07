@@ -94,7 +94,7 @@ export class Service {
         try {
             await this.bucket.deleteFile({
                 bucketId: conf.appwriteBucketid,
-                file: file
+                fileId: fileId
             })
             return true
         } catch (error) {
@@ -106,7 +106,7 @@ export class Service {
     getfilePreview(fileId){
         return this.bucket.getFilePreview({
             bucketId: conf.appwriteBucketid,
-            file: file
+            fileId: fileId
         })
     } // no async as the response is very fast
 }

@@ -12,9 +12,9 @@ class Authservice {
         this.account = new Account(this.client);
     }
 
-    async creatAccount({ email, password, name }) {
+    async createAccount({ email, password, name }) {
         try {
-            userAccount = await this.account.create({
+            const userAccount = await this.account.create({
                 userId: ID.unique(),
                 email,
                 password,
@@ -43,7 +43,6 @@ class Authservice {
             return await this.account.get()
         } catch (error) {
             console.log("Appwrite service :: getCurrentUser :: error", error);
-            
         }
         return null;
     }
